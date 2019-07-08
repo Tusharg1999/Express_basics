@@ -7,8 +7,12 @@ const users=user
 
 const app=express()
 const PORT =process.env.PORT||3000;
-app.use('/api/users',require('./router/api/router'))
+//body parser
+app.use(express.json())
+app.use(express.urlencoded({ extended:false }))
 
+//members api routes
+app.use('/api/users',require('./router/api/router'))
 
 // app.use(logger)
 //showing info of single user
