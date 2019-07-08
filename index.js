@@ -1,21 +1,17 @@
 const express=require('express')
 const path=require('path')
 const user=require('./users')
-const moment=require('moment')
-const users=user.user
+const logger=require('./middleware/logger')
+const users=user
 
 
 const app=express()
 const PORT =process.env.PORT||3000;
-const logger=(req,res,next)=>{
-    console.log(`${req.protocol}://${req.get('host')}${req.originalUrl}:${moment().parseZone()}`)
-    next()
-}
-app.use(logger)
+app.use('/api/users',require('./router/api/router'))
 
-app.get('/api/users',(req,res)=>{
-    res.json(users)
-})
+
+// app.use(logger)
+//showing info of single user
 
 //we donot want to route website with express we want to build an api with the help of express so we will focus on api part now
 //and leave the routing part from here we can see it fom docs

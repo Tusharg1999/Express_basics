@@ -1,9 +1,9 @@
 const user=[
     {name:"tushar",
-     id:"ckncknckhjfkjfkhkfjhnk"},
+     id:1},
      {name:"Aman",
-     id:"cknckkfjhfbjhbfknk"},
+     id:2},
      {name:"Varun",
-     id:"cknckndfkjdbcknk"},
+     id:3},
 ]
-module.exports.user=user;
+module.exports=user;
